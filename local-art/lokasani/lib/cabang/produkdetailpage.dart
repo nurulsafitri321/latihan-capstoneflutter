@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../constans.dart';
-import '../models/gambar.dart';
+
 // import 'package:carousel_pro/carousel_pro.dart';
-import 'package:another_carousel_pro/another_carousel_pro.dart';
+
 
 
 class ProdukDetailPage extends StatefulWidget {

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:lokasani/helper/db_helper.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:convert';
-import '../constans.dart';
-import '../helper/dbhelper.dart';
 
-import '../models/kategori.dart';
-import '../models/subkategori.dart';
 
 class KategoriPage extends StatefulWidget {
   final Widget? child;

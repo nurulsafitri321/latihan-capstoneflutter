@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../constans.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../models/produk.dart';
-import '../models/cabang.dart';
+
 import 'produkdetailpage.dart';
 
 class ProdukPage extends StatefulWidget {

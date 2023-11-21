@@ -3,10 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import '../constans.dart';
-import '../helper/dbhelper.dart';
-import '../models/kategori.dart';
-import '../models/subkategori.dart';
+
 import '../models/produk.dart';
 import 'produkdetailpage.dart';
 
