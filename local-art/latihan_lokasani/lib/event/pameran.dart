@@ -112,30 +112,38 @@ class _MyHomePageState extends State<MyHomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Pameran'),
+                          Text('Pameran', style: TextStyle(
+                          color: Color.fromARGB(255, 40, 134, 95),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Orasis Art Gallery'),
+                          Text('Orasis Art Gallery', style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),),
                         ],
                       ),
                       // Harga
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('From IDR 10k'),
+                          Text('From IDR 10k', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),), 
+                          Icon(Icons.map),
+                          Text('Orasis Art Gallery', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,),)
                         ],
                       ),
                       // Lokasi
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(Icons.map),
-                          Text('Orasis Art Gallery'),
-                        ],
-                      ),
                     ],
                   ),
                 ),
@@ -163,30 +171,44 @@ class _MyHomePageState extends State<MyHomePage> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 60,
-                  child: Column(
+                  child: const Column(
                     children: [
                       // Nama galeri
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Orasis Art Gallery'),
+                          Text('Pameran', style: TextStyle(
+                          color: Color.fromARGB(255, 40, 134, 95),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Edwin Gallery', style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),),
                         ],
                       ),
                       // Harga
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('From IDR 10k'),
+                          Text('From IDR 0', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),), 
+                          Icon(Icons.map),
+                          Text('Jl. Kemang Raya, 11, jakarta Selatan', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,),)
                         ],
                       ),
                       // Lokasi
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(Icons.map),
-                          Text('Orasis Art Gallery'),
-                        ],
-                      ),
                     ],
                   ),
                 ),
@@ -211,44 +233,50 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Judul pameran
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 40,
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text('Pameran'),
-                  ),
-                ),
-                // Detail pameran
-                Container(
-                  width: MediaQuery.of(context).size.width,
                   height: 60,
-                  child: Column(
+                  child: const Column(
                     children: [
                       // Nama galeri
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Orasis Art Gallery'),
+                          Text('Pameran', style: TextStyle(
+                          color: Color.fromARGB(255, 40, 134, 95),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Philo Art Space', style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),),
                         ],
                       ),
                       // Harga
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('From IDR 10k'),
+                          Text('From IDR 0', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),), 
+                          Icon(Icons.map),
+                          Text('Jl. Kemang Timur No.90C', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,),)
                         ],
                       ),
                       // Lokasi
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(Icons.map),
-                          Text('Orasis Art Gallery'),
-                        ],
-                      ),
                     ],
                   ),
                 ),
 
+                // Detail pameran
                 Container(
                   padding: const EdgeInsets.only(left: 15, right: 15),
                   child: Column(
@@ -269,43 +297,49 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Judul pameran
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 40,
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text('Pameran'),
-                  ),
-                ),
-                // Detail pameran
-                Container(
-                  width: MediaQuery.of(context).size.width,
                   height: 60,
-                  child: Column(
+                  child: const Column(
                     children: [
                       // Nama galeri
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Orasis Art Gallery'),
+                          Text('Pameran', style: TextStyle(
+                          color: Color.fromARGB(255, 40, 134, 95),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Museum Macan(Voice Againts Reason)', style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),),
                         ],
                       ),
                       // Harga
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('From IDR 10k'),
+                          Text('From IDR 50k', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),), 
+                          Icon(Icons.map),
+                          Text('Museum Macan', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,),)
                         ],
                       ),
                       // Lokasi
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(Icons.map),
-                          Text('Orasis Art Gallery'),
-                        ],
-                      ),
                     ],
                   ),
                 ),
+
 
                 Container(
                   padding: const EdgeInsets.only(left: 15, right: 15),
@@ -327,58 +361,49 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Judul pameran
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 40,
-                  color: Colors.blue,
-                  child: Center(
-                    child: Text('Pameran'),
-                  ),
-                ),
-                // Detail pameran
-                Container(
-                  width: MediaQuery.of(context).size.width,
                   height: 60,
-                  child: Column(
+                  child: const Column(
                     children: [
                       // Nama galeri
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Orasis Art Gallery'),
+                          Text('Pameran', style: TextStyle(
+                          color: Color.fromARGB(255, 40, 134, 95),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Biasa Art Space Bali', style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),),
                         ],
                       ),
                       // Harga
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('From IDR 10k'),
+                          Text('From IDR 10k', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),), 
+                          Icon(Icons.maps_ugc_outlined),
+                          Text('Seminyak', style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,),)
                         ],
                       ),
                       // Lokasi
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Icon(Icons.map),
-                          Text('Orasis Art Gallery'),
-                        ],
-                      ),
                     ],
                   ),
-                ),
-              
-              ],
-
-
-              
-            ),
-          ),
-          // Tombol kembali
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: ElevatedButton(
-              child: Text('Kembali'),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+                ), 
+              ],      
             ),
           ),
         ],
