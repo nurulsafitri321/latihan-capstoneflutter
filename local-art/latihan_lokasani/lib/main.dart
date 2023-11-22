@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:latihan_lokasani/event/pameran.dart';
+import 'package:latihan_lokasani/splashscreen/splashscreen.dart';
+
 
 void main() {
   runApp(const MyApp());
