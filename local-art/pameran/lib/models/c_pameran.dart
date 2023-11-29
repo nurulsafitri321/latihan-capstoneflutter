@@ -1,8 +1,8 @@
 class Food {
   String name;
   String image;
-  double cal;
-  double time;
+  double IDR;
+  double map;
   double rate;
   int reviews;
   bool isLiked;
@@ -10,8 +10,8 @@ class Food {
   Food({
     required this.name,
     required this.image,
-    required this.cal,
-    required this.time,
+    required this.IDR,
+    required this.map,
     required this.rate,
     required this.reviews,
     required this.isLiked,
@@ -20,55 +20,55 @@ class Food {
 
 final List<Food> foods = [
   Food(
-    name: "Spicy Ramen Noodles",
+    name: "Orasis Art Gallery",
     image: "assets/images/Pameran1.png",
-    cal: 120,
-    time: 15,
+    IDR: 10,
+    map: 0,
     rate: 4.4,
     reviews: 23,
     isLiked: false,
   ),
   Food(
-    name: "Beef Steak",
+    name: "Edwin's Gallery",
     image: "assets/images/Pameran2.png",
-    cal: 140,
-    time: 25,
+    IDR: 10,
+    map: 0,
     rate: 4.4,
     reviews: 23,
     isLiked: true,
   ),
   Food(
-    name: "Butter Chicken",
+    name: "Orasist Art Gallery",
     image: "assets/images/Pameran3.png",
-    cal: 130,
-    time: 18,
+    IDR: 10,
+    map: 0,
     rate: 4.2,
     reviews: 10,
     isLiked: false,
   ),
   Food(
-    name: "French Toast",
+    name: "Museum Macam (Voice Against Reason)",
     image: "assets/images/Pameran4.png",
-    cal: 110,
-    time: 16,
+    IDR: 10,
+    map: 0,
     rate: 4.6,
     reviews: 90,
     isLiked: true,
   ),
   Food(
-    name: "Dumplings",
+    name: "Biasa Art Space Bali",
     image: "assets/images/Pameran5.png",
-    cal: 150,
-    time: 30,
+    IDR: 10,
+    map: 0,
     rate: 4.0,
     reviews: 76,
     isLiked: false,
   ),
   Food(
-    name: "Mexican Pizza",
+    name: "Orasis Art Gallery",
     image: "assets/images/Pameran1.png",
-    cal: 140,
-    time: 25,
+    IDR: 10,
+    map: 0,
     rate: 4.4,
     reviews: 23,
     isLiked: false,

@@ -21,7 +21,7 @@ class Categories extends StatelessWidget {
           (index) => Container(
             decoration: BoxDecoration(
               color:
-                  currentCat == catgories[index] ? kprimaryColor : Colors.white,
+                  currentCat == catgories[index] ? kprimaryColor : Color.fromARGB(255, 228, 221, 221),
               borderRadius: BorderRadius.circular(25),
             ),
             padding: const EdgeInsets.symmetric(
@@ -33,8 +33,8 @@ class Categories extends StatelessWidget {
               catgories[index],
               style: TextStyle(
                 color: currentCat == catgories[index]
-                    ? Colors.white
-                    : Colors.grey.shade600,
+                    ? Color.fromARGB(255, 255, 255, 255)
+                    : Color.fromARGB(255, 12, 12, 12),
               ),
             ),
           ),

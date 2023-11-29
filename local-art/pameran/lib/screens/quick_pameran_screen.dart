@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:pameran/models/c_pameran.dart';
 import 'package:pameran/widgets/pameran_card.dart';
 import 'package:pameran/widgets/quick_screen_appbar.dart';
@@ -33,7 +32,7 @@ class _QuickFoodsScreenState extends State<QuickFoodsScreen> {
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
                   ),
-                  itemBuilder: (context, index) => FoodCard(
+                  itemBuilder: (context, index) => PameranCard(
                     food: foods[index],
                   ),
                   itemCount: foods.length,

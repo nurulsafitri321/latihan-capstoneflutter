@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pameran/widgets/categories.dart';
 import 'package:pameran/widgets/home_appbar.dart';
-import 'package:pameran/widgets/home_search_bar.dart';
 import 'package:pameran/widgets/quick_and_fast_list.dart';
 
 

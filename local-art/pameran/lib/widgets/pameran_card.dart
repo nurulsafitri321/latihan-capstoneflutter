@@ -4,9 +4,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:pameran/models/c_pameran.dart';
 import 'package:pameran/screens/deskripsi_screen.dart';
 
-class FoodCard extends StatelessWidget {
+class PameranCard extends StatelessWidget {
   final Food food;
-  const FoodCard({super.key, required this.food});
+  const PameranCard({super.key, required this.food});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class FoodCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => RecipeScreen(food: food),
+          builder: (context) => DetailScreen(pameran: food),
         ),
       ),
       child: SizedBox(
@@ -51,7 +51,7 @@ class FoodCard extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     Text(
-                      "${food.cal} Cal",
+                      "${food.IDR} From IDR |",
                       style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
@@ -62,12 +62,12 @@ class FoodCard extends StatelessWidget {
                       style: TextStyle(color: Colors.grey),
                     ),
                     const Icon(
-                      Iconsax.clock,
+                      Iconsax.location1,
                       size: 18,
                       color: Colors.grey,
                     ),
                     Text(
-                      "${food.time} Min",
+                      "${food.map} Jl",
                       style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
@@ -105,7 +105,7 @@ class FoodCard extends StatelessWidget {
               child: IconButton(
                 onPressed: () {},
                 style: IconButton.styleFrom(
-                  backgroundColor: Colors.white,
+                  backgroundColor: Color.fromARGB(255, 255, 255, 255),
                   fixedSize: const Size(30, 30),
                 ),
                 iconSize: 20,

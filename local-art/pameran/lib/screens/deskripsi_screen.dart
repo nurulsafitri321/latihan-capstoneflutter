@@ -1,64 +1,96 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:pameran/constants.dart';
-import 'package:pameran/models/c_pameran.dart';
-import 'package:pameran/widgets/pameran_counter.dart';
+import 'package:pameran/screens/metode_pembayaran.dart';
 
 
 
-class RecipeScreen extends StatefulWidget {
-  final Food food;
-  const RecipeScreen({super.key, required this.food});
+
+class DetailScreen extends StatefulWidget {
+  final pameran;
+  const DetailScreen({super.key, required this.pameran});
 
   @override
-  State<RecipeScreen> createState() => _RecipeScreenState();
+  State<DetailScreen> createState() => _DetailScreenState();
 }
 
-class _RecipeScreenState extends State<RecipeScreen> {
+class _DetailScreenState extends State<DetailScreen> {
   int currentNumber = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 6,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: kprimaryColor,
-                  foregroundColor: Colors.white,
-                ),
-                child: const Text("Start Cooking"),
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: IconButton(
-                onPressed: () {},
-                style: IconButton.styleFrom(
-                  shape: CircleBorder(
-                    side: BorderSide(
-                      color: Colors.grey.shade300,
-                      width: 2,
-                    ),
-                  ),
-                ),
-                icon: Icon(
-                  widget.food.isLiked ? Iconsax.heart5 : Iconsax.heart,
-                  color: widget.food.isLiked ? Colors.red : Colors.black,
-                  size: 20,
-                ),
-              ),
-            ),
-          ],
+      appBar: AppBar(
+        title: const Text(''),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
         ),
+        actions: [
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.favorite),
+                onPressed: () {
+                  // Handle favorite button press
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.shopping_cart),
+                onPressed: () {
+                  // Handle shopping cart button press
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.message),
+                onPressed: () {
+                  // Handle message button press
+                },
+              ),
+            ],
+          ), 
+        ],
       ),
+      // bottomNavigationBar: Container(
+      //   padding: const EdgeInsets.all(10),
+      //   child: Row(
+          // children: [
+          //   Expanded(
+          //     flex: 6,
+          //     child: ElevatedButton(
+          //       onPressed: () {},
+          //       style: ElevatedButton.styleFrom(
+          //         backgroundColor: kprimaryColor,
+          //         foregroundColor: Colors.white,
+          //       ),
+          //       child: const Text("Bayar Sekarang"),
+          //     ),
+          //   ),
+          //   const SizedBox(width: 10),
+          //   Expanded(
+          //     child: IconButton(
+          //       onPressed: () {},
+          //       style: IconButton.styleFrom(
+          //         shape: CircleBorder(
+          //           side: BorderSide(
+          //             color: Colors.grey.shade300,
+          //             width: 2,
+          //           ),
+          //         ),
+          //       ),
+          //       icon: Icon(
+          //         widget.food.isLiked ? Iconsax.heart5 : Iconsax.heart,
+          //         color: widget.food.isLiked ? Colors.red : Colors.black,
+          //         size: 20,
+          //       ),
+          //     ),
+          //   ),
+          // ],
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,44 +102,13 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     height: MediaQuery.of(context).size.width - 20,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(widget.food.image),
+                        image: AssetImage(widget.pameran.image),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
                 ),
-                Positioned(
-                  top: 40,
-                  left: 10,
-                  right: 10,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.pop(context),
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          fixedSize: const Size(50, 50),
-                        ),
-                        icon: const Icon(CupertinoIcons.chevron_back),
-                      ),
-                      const Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        style: IconButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          fixedSize: const Size(50, 50),
-                        ),
-                        icon: const Icon(Iconsax.notification),
-                      ),
-                    ],
-                  ),
-                ),
+                
                 Positioned(
                   left: 0,
                   right: 0,
@@ -117,10 +118,10 @@ class _RecipeScreenState extends State<RecipeScreen> {
                     padding: const EdgeInsets.all(20),
                     decoration: const BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        topLeft: Radius.circular(20),
-                      ),
+                      // borderRadius: BorderRadius.only(
+                      //   topRight: Radius.circular(20),
+                      //   topLeft: Radius.circular(20),
+                      // ),
                     ),
                   ),
                 ),
@@ -143,79 +144,72 @@ class _RecipeScreenState extends State<RecipeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.food.name,
+                    widget.pameran.name,
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  
                   const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      const Icon(
-                        Iconsax.flash_1,
-                        size: 20,
-                        color: Colors.grey,
-                      ),
-                      Text(
-                        "${widget.food.cal} Cal",
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      const Text(
-                        " · ",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      const Icon(
-                        Iconsax.clock,
-                        size: 20,
-                        color: Colors.grey,
-                      ),
-                      Text(
-                        "${widget.food.time} Min",
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
+                  const Row(
                     children: [
                       Icon(
-                        Iconsax.star5,
-                        color: Colors.yellow.shade700,
+                        Iconsax.location4,
+                        color: const Color.fromARGB(255, 53, 51, 45),
                         size: 25,
                       ),
-                      const SizedBox(width: 5),
+                      SizedBox(width: 5),
                       Text(
-                        "${widget.food.rate}/5",
+                        "Museum Macan",
                         style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        "(${widget.food.reviews} Reviews)",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey.shade400,
+                          fontSize: 16,
+                          color:  Color.fromARGB(255, 5, 5, 5),
                         ),
                       )
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  Row(
+                  const SizedBox(height: 10),
+                  const Row(
                     children: [
-                      const Column(
+                      SizedBox(width: 5),
+                      Text(
+                        "Jalan Perjuagan, Rt,11/Rw.10, Kebon Jeruk",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color:  Color.fromARGB(255, 143, 129, 129),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  const Row(
+                    children: [
+                      SizedBox(width: 5),
+                      Text(
+                        "Menampilkan di Peta",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color:  Color.fromARGB(255, 40, 91, 184)
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 40),
+                  const Row(
+                    children: [
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Ingredients",
+                            "Deskripsi",
+                            style: TextStyle(
+                              fontSize: 20,  
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Tentang Museum Macan",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -223,7 +217,32 @@ class _RecipeScreenState extends State<RecipeScreen> {
                           ),
                           SizedBox(height: 10),
                           Text(
-                            "How many servings?",
+                            "Voice Against Reason adalah pameran besar \nyang melibatkan 24 perupa dari Australia, \nBangladesh, India, Indonesia, Jepang, \nSingapura, Taiwan, Thailand, dan Vietnam.",
+                            style: TextStyle(
+                              fontSize: 20, 
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Baca Selengkapnya",
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.blueAccent 
+                            ),
+                          ),
+                      
+                          SizedBox(height: 25),
+                          Text(
+                            "Tiket",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          
+                          SizedBox(height: 10),
+                          Text(
+                            "",
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey,
@@ -231,20 +250,20 @@ class _RecipeScreenState extends State<RecipeScreen> {
                           )
                         ],
                       ),
-                      const Spacer(),
-                      FoodCounter(
-                        currentNumber: currentNumber,
-                        onAdd: () => setState(() {
-                          currentNumber++;
-                        }),
-                        onRemove: () {
-                          if (currentNumber != 1) {
-                            setState(() {
-                              currentNumber--;
-                            });
-                          }
-                        },
-                      )
+                      // const Spacer(),
+                      // PameranCounter(
+                      //   currentNumber: currentNumber,
+                      //   onAdd: () => setState(() {
+                      //     currentNumber++;
+                      //   }),
+                      //   onRemove: () {
+                      //     if (currentNumber != 1) {
+                      //       setState(() {
+                      //         currentNumber--;
+                      //       });
+                      //     }
+                      //   },
+                      // )
                     ],
                   ),
                   const SizedBox(height: 20),
@@ -259,28 +278,64 @@ class _RecipeScreenState extends State<RecipeScreen> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               image: DecorationImage(
-                                image: AssetImage(widget.food.image),
+                                image: AssetImage(widget.pameran.image),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
                           const SizedBox(width: 10),
                           const Text(
-                            "Ramen Noodles",
+                            "Tickets Museum Macan \nWEEKDAY",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const Spacer(),
-                          Text(
-                            "400g",
+                          const Text(
+                            "\n\nRp 50.000",
                             style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey.shade400,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 16, 119, 204),
+                              fontWeight: FontWeight.bold,
                             ),
-                          )
+                          ),
+                          const Spacer(),
+                          IconButton(
+                                  icon: Icon(Icons.delete, color: const Color.fromARGB(255, 0, 0, 0)),
+                                  onPressed: () {},
+                                ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Tambahkan logika untuk menyimpan tiket
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => PaymentMethodScreen1()), // Ganti dengan rute yang sesuai
+                              );
+                            },
+                            child: Text(
+                              "Pesan",
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                            ),
+                          ),
+
+                          // Text(
+                          //   "Pesan",
+                          //   style: TextStyle(
+                          //     fontSize: 16,
+                          //     color: Colors.grey.shade400,
+                          //   ),
+                          // )
                         ],
+                      ),
+                      Divider(
+                        height: 20,
+                        color: Colors.grey.shade300,
                       ),
                       Divider(
                         height: 20,
@@ -294,65 +349,65 @@ class _RecipeScreenState extends State<RecipeScreen> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               image: DecorationImage(
-                                image: AssetImage(widget.food.image),
+                                image: AssetImage(widget.pameran.image),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
                           const SizedBox(width: 10),
                           const Text(
-                            "Ramen Noodles",
+                          "Tickets Museum Macan \nWEEKEND",
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const Spacer(),
-                          Text(
-                            "400g",
+                          const Text(
+                            "\n\nRp 70.000",
                             style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey.shade400,
+                              fontSize: 20,
+                              color: Color.fromARGB(255, 16, 119, 204),
+                              fontWeight: FontWeight.bold,
                             ),
-                          )
-                        ],
-                      ),
-                      Divider(
-                        height: 20,
-                        color: Colors.grey.shade300,
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                            width: 60,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: AssetImage(widget.food.image),
-                                fit: BoxFit.fill,
+                          ),
+                          const Spacer(),
+                          IconButton(
+                                  icon: const Icon(Icons.delete, color: Color.fromARGB(255, 0, 0, 0)),
+                                  onPressed: () {},
+                                ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Tambahkan logika untuk menyimpan tiket
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => PaymentMethodScreen1()), // Ganti dengan rute yang sesuai
+                              );
+                            },
+                            child: Text(
+                              "Pesan",
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
                               ),
                             ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.green,
+                            ),
                           ),
-                          const SizedBox(width: 10),
+                        ],
+                      ),
+                      const SizedBox(height: 40),
                           const Text(
-                            "Ramen Noodles",
+                            "Merchandise",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const Spacer(),
-                          Text(
-                            "400g",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey.shade400,
-                            ),
-                          )
-                        ],
-                      ),
+                          
+                          
                     ],
+                    
                   ),
                   const SizedBox(height: 20),
                 ],

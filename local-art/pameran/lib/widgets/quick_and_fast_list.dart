@@ -13,25 +13,25 @@ class QuickAndFastList extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              "Quick & Fast",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            TextButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const QuickFoodsScreen(),
-                ),
-              ),
-              child: const Text("View all"),
-            ),
+            // const Text(
+            //   "Quick & Fast",
+            //   style: TextStyle(
+            //     fontSize: 20,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
+            // TextButton(
+            //   onPressed: () => Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) => const QuickFoodsScreen(),
+            //     ),
+            //   ),
+            //   child: const Text("View all"),
+            // ),
           ],
         ),
         const SizedBox(height: 20),
@@ -44,7 +44,7 @@ class QuickAndFastList extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => RecipeScreen(food: foods[index]),
+                    builder: (context) => DetailScreen(pameran: foods[index]),
                   ),
                 ),
                 child: Container(
@@ -77,13 +77,13 @@ class QuickAndFastList extends StatelessWidget {
                           const SizedBox(height: 10),
                           Row(
                             children: [
-                              const Icon(
-                                Iconsax.flash_1,
-                                size: 18,
-                                color: Colors.grey,
-                              ),
+                              // const Icon(
+                              //   Iconsax.flash_1,
+                              //   size: 18,
+                              //   color: Colors.grey,
+                              // ),
                               Text(
-                                "${foods[index].cal} Cal",
+                                "${foods[index].IDR} K From IDR |",
                                 style: const TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey,
@@ -94,12 +94,12 @@ class QuickAndFastList extends StatelessWidget {
                                 style: TextStyle(color: Colors.grey),
                               ),
                               const Icon(
-                                Iconsax.clock,
+                                Iconsax.location,
                                 size: 18,
                                 color: Colors.grey,
                               ),
                               Text(
-                                "${foods[index].time} Min",
+                                "${foods[index].map} Jl",
                                 style: const TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey,
@@ -110,16 +110,16 @@ class QuickAndFastList extends StatelessWidget {
                         ],
                       ),
                       Positioned(
-                        top: 150,
-                        right: 2,
+                        top: 160,
+                        right: 1,
                         child: IconButton(
                           onPressed: () {},
                           style: IconButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 228, 179, 18),
+                            //backgroundColor: Color.fromARGB(255, 228, 179, 18),
                             fixedSize: const Size(5, 5),
                           ),
                           iconSize: 15,
-                          icon: const Icon(Iconsax.back_square),
+                          icon: const Icon(Iconsax.arrow_right4),
                         ),
                       )
                     ],

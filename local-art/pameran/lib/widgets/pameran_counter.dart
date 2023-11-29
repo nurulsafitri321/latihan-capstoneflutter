@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class FoodCounter extends StatelessWidget {
+class PameranCounter extends StatelessWidget {
   final int currentNumber;
   final Function() onAdd;
   final Function() onRemove;
-  const FoodCounter({
+  const PameranCounter({
     super.key,
     required this.currentNumber,
     required this.onAdd,
