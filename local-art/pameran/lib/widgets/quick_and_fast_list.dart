@@ -36,8 +36,8 @@ class QuickAndFastList extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+          scrollDirection: Axis.vertical,
+          child: Column(
             children: List.generate(
               foods.length,
               (index) => GestureDetector(
@@ -49,7 +49,7 @@ class QuickAndFastList extends StatelessWidget {
                 ),
                 child: Container(
                   margin: const EdgeInsets.only(right: 10),
-                  width: 200,
+                  width: MediaQuery.of(context).size.width,
                   child: Stack(
                     children: [
                       Column(
