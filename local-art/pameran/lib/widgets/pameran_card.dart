@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:iconsax/iconsax.dart';
-import 'package:pameran/models/c_pameran.dart';
 import 'package:pameran/screens/deskripsi_screen.dart';
 
 class PameranCard extends StatelessWidget {
-  final Food food;
-  const PameranCard({super.key, required this.food});
+  final pameran;
+  const PameranCard({super.key, required this.pameran});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class PameranCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailScreen(pameran: food),
+          builder: (context) => DetailScreen(pameran: pameran),
         ),
       ),
       child: SizedBox(
@@ -30,14 +28,14 @@ class PameranCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
-                      image: AssetImage(food.image),
+                      image: AssetImage(pameran.image),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  food.name,
+                  pameran.name,
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -51,7 +49,7 @@ class PameranCard extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     Text(
-                      "${food.IDR} From IDR |",
+                      "${pameran.IDR} From IDR |",
                       style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
@@ -67,7 +65,7 @@ class PameranCard extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     Text(
-                      "${food.map} Jl",
+                      "${pameran.map} Jl",
                       style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
@@ -81,7 +79,7 @@ class PameranCard extends StatelessWidget {
                         color: Colors.yellow.shade700, size: 20),
                     const SizedBox(width: 5),
                     Text(
-                      "${food.rate}/5",
+                      "${pameran.rate}/5",
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.grey.shade600,
@@ -89,7 +87,7 @@ class PameranCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 5),
                     Text(
-                      "(${food.reviews} Reviews)",
+                      "(${pameran.reviews} Reviews)",
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.grey.shade400,
@@ -109,7 +107,7 @@ class PameranCard extends StatelessWidget {
                   fixedSize: const Size(30, 30),
                 ),
                 iconSize: 20,
-                icon: food.isLiked!
+                icon: pameran.isLiked!
                     ? const Icon(
                         Iconsax.heart5,
                         color: Colors.red,

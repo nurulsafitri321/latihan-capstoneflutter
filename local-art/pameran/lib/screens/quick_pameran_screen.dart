@@ -4,16 +4,17 @@ import 'package:pameran/models/c_pameran.dart';
 import 'package:pameran/widgets/pameran_card.dart';
 import 'package:pameran/widgets/quick_screen_appbar.dart';
 
-class QuickFoodsScreen extends StatefulWidget {
-  const QuickFoodsScreen({super.key});
+class QuickPameransScreen extends StatefulWidget {
+  const QuickPameransScreen({super.key});
 
   @override
-  State<QuickFoodsScreen> createState() => _QuickFoodsScreenState();
+  State<QuickPameransScreen> createState() => _QuickPameransScreenState();
 }
 
-class _QuickFoodsScreenState extends State<QuickFoodsScreen> {
+class _QuickPameransScreenState extends State<QuickPameransScreen> {
   @override
   Widget build(BuildContext context) {
+    var pamerans;
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -33,9 +34,9 @@ class _QuickFoodsScreenState extends State<QuickFoodsScreen> {
                     mainAxisSpacing: 20,
                   ),
                   itemBuilder: (context, index) => PameranCard(
-                    food: foods[index],
+                    pameran: pamerans[index],
                   ),
-                  itemCount: foods.length,
+                  itemCount: pamerans.length,
                 )
               ],
             ),
